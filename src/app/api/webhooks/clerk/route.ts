@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     })
   }
   // Get body
-  const payload = await req.json()
+  const payload = await request.json()
   const body = JSON.stringify(payload)
 
   let evt: WebhookEvent
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
 
         const user = {
             clerkId: id,
-            email: email_address[0],email_address,
+            email: email_addresses[0],email_addresses,
             first_name: first_name,
             last_name: last_name,
         }
@@ -90,5 +90,5 @@ export async function POST(request: Request) {
 
   return new Response('Webhook received', { status: 200 })
 
-
-}
+    }
+    }
